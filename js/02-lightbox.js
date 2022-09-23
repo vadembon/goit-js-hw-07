@@ -10,20 +10,12 @@ function createGalleryMarkup(galleryItems) {
       return `
         <a class="gallery__item" href="${original}">
   <img class="gallery__image" src="${preview}" alt="${description}" />
-</a>
-        `;
+</a>`;
     })
     .join("");
 }
 
-galleryBox.addEventListener("click", onItemGalleryClick);
-function onItemGalleryClick(evt) {
-  if (!evt.target.classList.contains("gallery__image")) {
-    return;
-  }
-  evt.preventDefault();
-  var lightbox = new SimpleLightbox(".gallery__item", {
-    captionsData: "alt",
-    captionDelay: 250,
-  });
-}
+new SimpleLightbox(".gallery__item", {
+  captionsData: "alt",
+  captionDelay: 250,
+});
