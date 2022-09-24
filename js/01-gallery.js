@@ -28,10 +28,10 @@ function onItemGalleryClick(event) {
     return;
   }
   event.preventDefault();
-  Modal();
+  modal();
 }
 
-function Modal() {
+function modal() {
   const instance = basicLightbox.create(
     `
     <img src="${event.target.dataset.source}"/>`,
